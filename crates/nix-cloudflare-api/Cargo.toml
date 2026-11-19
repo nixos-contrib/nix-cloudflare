@@ -9,8 +9,8 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # `http` hands `fetch` an http::Request, which the SDK's axum router takes.
-worker = { version = "0.8", features = ["http", "axum"] }
-worker-macros = { version = "0.8" }
+worker = { version = "0.9", features = ["http", "axum"] }
+worker-macros = { version = "0.9" }
 
 # The API: its types, and the traits and router the Worker implements.
 nix-cloudflare-sdk = { path = "../nix-cloudflare-sdk", features = ["server", "signing"] }
