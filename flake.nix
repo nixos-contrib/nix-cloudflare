@@ -26,6 +26,12 @@
         };
 
         rust-toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
+
+        # nixpkgs' worker-build builds zstd-sys via pkg-config but doesn't provide libzstd.
+        worker-build = pkgs.worker-build.overrideAttrs (old: {
+          nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.pkg-config ];
+          buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.zstd ];
+        });
       in
       {
         devShells.default = pkgs.mkShell {
@@ -35,7 +41,7 @@
             pkgs.opentofu
             pkgs.pkg-config
             pkgs.wrangler
-            pkgs.worker-build
+            worker-build
             rust-toolchain
           ];
         };
