@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.12.2](https://github.com/nixos-contrib/nix-cloudflare/compare/v0.12.1...v0.12.2) (2026-11-19)
+
+
+### Bug Fixes
+
+* **flake:** build worker-build 0.9.0 with bundled zstd ([d906ba8](https://github.com/nixos-contrib/nix-cloudflare/commit/d906ba8c44fe3d2c76fb1913b0d822e64fd3b621))
+* **flake:** provide zstd to worker-build ([494390e](https://github.com/nixos-contrib/nix-cloudflare/commit/494390e210ce2fbbd913daeaf789d0dc4c6c072e))
+
 ## [0.12.1](https://github.com/nixos-contrib/nix-cloudflare/compare/v0.12.0...v0.12.1) (2026-11-13)
 
 
